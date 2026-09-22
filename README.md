@@ -268,7 +268,6 @@ real_estate_voice_agent/
 │   ├── index.html
 │   └── app.py
 │
-├── .env
 ├── .gitignore
 ├── requirements.txt
 └── README.md
@@ -301,18 +300,6 @@ pip install SpeechRecognition pyttsx3 PyAudio
 The current frontend voice/TTS implementation also uses:
 
 pip install edge-tts pygame streamlit streamlit-mic-recorder
-
-🔐 Environment Variables
-
-Create a .env file in the project root if your configured services require API credentials.
-
-Example:
-
-GEMINI_API_KEY=your_api_key_here
-
-Never commit real API keys to GitHub.
-
-Add .env to .gitignore.
 
 ▶️ Run the Backend
 
