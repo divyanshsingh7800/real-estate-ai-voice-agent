@@ -277,7 +277,7 @@ real_estate_voice_agent/
 
 1. Clone the repository
 
-git clone <YOUR_GITHUB_REPOSITORY_URL>
+git clone <https://github.com/divyanshsingh7800/real-estate-ai-voice-agent>
 cd real_estate_voice_agent
 
 2. Create virtual environment
