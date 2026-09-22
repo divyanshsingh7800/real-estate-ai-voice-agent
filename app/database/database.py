@@ -13,10 +13,8 @@ def get_connection():
 
 
 def create_tables():
-
     connection = get_connection()
     cursor = connection.cursor()
-
     # Main leads table
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS leads (
@@ -39,19 +37,13 @@ def create_tables():
 
     connection.commit()
 
-    # ---------------------------------------------------------
     # Check existing columns
-    # ---------------------------------------------------------
-
     cursor.execute("PRAGMA table_info(leads)")
     existing_columns = {
         row["name"] for row in cursor.fetchall()
     }
 
-    # ---------------------------------------------------------
     # Add missing columns
-    # ---------------------------------------------------------
-
     required_columns = {
 
         "name": "TEXT",
@@ -70,9 +62,7 @@ def create_tables():
     }
 
     for column_name, column_type in required_columns.items():
-
         if column_name not in existing_columns:
-
             cursor.execute(
                 f"ALTER TABLE leads ADD COLUMN "
                 f"{column_name} {column_type}"
@@ -83,13 +73,9 @@ def create_tables():
 
 
 def save_leads(lead_data):
-
-    # Make sure database/table is updated
     create_tables()
-
     connection = get_connection()
     cursor = connection.cursor()
-
     cursor.execute("""
         INSERT INTO leads (
             name,
@@ -124,29 +110,20 @@ def save_leads(lead_data):
     ))
 
     connection.commit()
-
     lead_id = cursor.lastrowid
-
     connection.close()
-
     return lead_id
 
 
 def get_all_leads():
-
     connection = get_connection()
     cursor = connection.cursor()
-
     cursor.execute(
         "SELECT * FROM leads ORDER BY id DESC"
     )
-
     leads = cursor.fetchall()
-
     connection.close()
-
     return leads
-
 
 # Create/update database automatically
 create_tables()

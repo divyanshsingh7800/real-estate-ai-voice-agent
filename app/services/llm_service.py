@@ -5,6 +5,7 @@ from dotenv import load_dotenv
 from google import genai
 from app.agent.prompts import (EXTRACTION_PROMPT, RESPONSE_PROMPT)
 
+
 load_dotenv()
 
 class LLMService:

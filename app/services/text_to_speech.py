@@ -5,9 +5,7 @@ import pygame
 
 
 class TextToSpeech:
-
     def __init__(self):
-
         # Indian Hindi female voice
         self.voice = "hi-IN-SwaraNeural"
 
@@ -18,7 +16,6 @@ class TextToSpeech:
         pygame.mixer.init()
 
     async def _generate_audio(self, text):
-
         communicate = edge_tts.Communicate(
             text=text,
             voice=self.voice,
@@ -27,16 +24,11 @@ class TextToSpeech:
         )
 
         await communicate.save(self.audio_file)
-
     def speak(self, text):
-
         if not text:
             return
-
         print("AI:", text)
-
         try:
-
             # Generate Hindi speech
             asyncio.run(self._generate_audio(text))
 
@@ -52,16 +44,12 @@ class TextToSpeech:
             pygame.mixer.music.unload()
 
         except Exception as error:
-
             print("TTS Error:", error)
 
         finally:
-
             # Delete temporary audio
             if os.path.exists(self.audio_file):
-
                 try:
                     os.remove(self.audio_file)
-
                 except PermissionError:
                     pass
