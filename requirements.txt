@@ -1,0 +1,12 @@
+fastapi
+uvicorn[standard]
+python-dotenv
+pydantic
+requests
+python-multipart
+
+streamlit
+streamlit-mic-recorder
+
+SpeechRecognition
+edge-tts

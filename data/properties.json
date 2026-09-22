@@ -1,0 +1,51 @@
+[
+    {
+        "property_id": "P001",
+        "name": "Green Valley Residency",
+        "location": "Lucknow",
+        "property_type": "Apartment",
+        "bhk": 2,
+        "price": 6500000,
+        "possesion": "2027"
+    },
+
+    {
+        "property_id": "P002",
+        "name": "Urban Heights",
+        "location": "Lucknow",
+        "property_type": "Apartment",
+        "bhk": 3,
+        "price": 7000000,
+        "possesion":"2027"
+    },
+
+    {
+        "property_id": "P003",
+        "name": "Sunrise Enclave",
+        "location": "Lucknow",
+        "property_type": "Apartment",
+        "bhk": 2,
+        "price": 5800000,
+        "possesion": "2027"
+    },
+
+    {
+        "property_id": "P004",
+        "name": "City View Residency",
+        "location": "Lucknow",
+        "property_type": "Apartment",
+        "bhk": 3,
+        "price": 8500000,
+        "possesion": "2028"
+    },
+
+    {
+        "property_id": "P005",
+        "name": "Royal Greens",
+        "location": "Kanpur",
+        "property_type": "Apartment",
+        "bhk": 3,
+        "price": 6800000,
+        "possesion": "2027"
+    }
+]
