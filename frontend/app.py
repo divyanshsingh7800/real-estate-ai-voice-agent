@@ -314,13 +314,32 @@ with st.sidebar:
         )
 
 # CLEAR CONVERSATION
-if st.button(
-    "Clear Conversation"
-):
+if st.button("🗑️ Clear Conversation"):
+    # Reset backend agent
+    try:
+        requests.post(
+            f"{API_URL.replace('/chat', '')}/reset",
+            timeout=10
+        )
+    except Exception:
+        pass
 
+    # Reset Streamlit session
     st.session_state.messages = []
-    st.session_state.customer_data = {}
     st.session_state.lead_id = None
-    st.session_state.audio_response = None
-    st.session_state.last_audio_hash = None
+    st.session_state.last_audio_hash = ""
+
+    # Reset customer information
+    st.session_state.customer_data = {
+        "name": None,
+        "phone": None,
+        "location": None,
+        "property_type": None,
+        "bhk": None,
+        "budget_min": None,
+        "budget_max": None,
+        "timeline": None,
+        "purpose": None,
+        "selected_property": None
+    }
     st.rerun()

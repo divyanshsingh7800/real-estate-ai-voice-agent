@@ -39,3 +39,13 @@ def get_leads():
         "count": len(leads),
         "leads": [dict(lead) for lead in leads]
     }
+
+@app.post("/reset")
+def reset_agent():
+    global agent
+    agent = RealEstateAgent()
+
+    return {
+        "message": "Conversation reset successfully",
+        "status": "success"
+    }
